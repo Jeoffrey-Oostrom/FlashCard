@@ -1,0 +1,20 @@
+<td><%= link_to 'new question', new_question_path, class: 'row btn btn-default' %></td>
+<br />
+<br />
+<table class="table table-striped table-condensed">
+  <tr>
+    <td><b>subject</b></td>
+    <td><b>question</b></td>
+    <td><b>answer</b></td>
+    <td colspan="3"><b>actions</b></td>
+  </tr>
+  <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.subject.subject %></td>
+        <td><%= question.question %></td>
+        <td><%= question.answer %></td>
+        <td><%= link_to 'edit', edit_question_path(question.id), class: 'row btn btn-default' %></td>
+        <td><%= link_to 'delete', question_path(question), data: {confirm: "Are you sure?"}, method: :delete, class: 'row btn btn-default' %></td>
+      </tr>
+  <% end %>
+</table>

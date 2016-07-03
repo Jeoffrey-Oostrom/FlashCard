@@ -1,0 +1,16 @@
+<%= simple_form_for @exam do |f| %>
+
+    <% @questions.each do |question| %>
+      <label><%= question.question %></label>
+      <br />
+      <% if !question.open %>
+        <%= radio_button_tag(question.id, question.answer) %><%= question.answer %><br />
+        <%= radio_button_tag(question.id, 'fake answer') %>fake answer<br />
+      <% else %>
+        <%= text_field_tag(question.id) %>
+      <% end %>
+    <% end %>
+
+    <%= f.submit 'end exam' %>
+
+<% end %>

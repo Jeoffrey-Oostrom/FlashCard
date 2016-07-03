@@ -1,0 +1,25 @@
+<script>var score = 0;</script>
+
+<% @questions.each do |question| %>
+
+    <%= question.question %>
+    <br />
+    <button onclick="$(this).html('<%= escape_javascript(render partial: 'practice/answer', locals: { ans: question.answer }) %>')">show result</button>
+    <br />
+    <button onclick="add_score()">correct</button>
+    <button>wrong</button>
+    <br />
+    <br />
+<% end %>
+
+<button onclick="show_result()" id="result">show end result</button>
+
+<script>
+  function add_score(){
+    score ++;
+  }
+
+  function show_result() {
+    document.getElementById('result').innerHTML = "you have a " + score;
+  }
+</script>

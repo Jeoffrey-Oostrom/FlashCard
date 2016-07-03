@@ -1,0 +1,26 @@
+<%= simple_form_for @question do |f| %>
+    <% if @question.errors.any? %>
+        <div class="error_messages">
+          <h2>Form is invalid</h2>
+          <ul>
+            <% for message in @question.errors.full_messages %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <p>
+        <%= f.input :subject_id, collection: @subjects, :label_method => :subject, :value_method => :id, include_blank: false %>
+
+    </p>
+    <p>
+      <%= f.input :question %>
+    </p>
+    <p>
+      <%= f.input :answer %>
+    </p>
+    <p>
+      <%= f.input :open, label: 'Open vraag' %>
+    </p>
+    <%= f.submit %>
+<% end %>

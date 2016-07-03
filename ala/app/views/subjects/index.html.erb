@@ -1,0 +1,13 @@
+<table class="table table-striped table-condensed">
+  <tr>
+    <td><b>subject</b></td>
+    <td colspan="2"><b>actions</b></td>
+  </tr>
+  <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.subject %></td>
+        <td><%= link_to 'edit', edit_subject_path(subject.id) %></td>
+        <td><%= link_to 'delete', subject_path(subject), data: {confirm: "Are you sure?"}, method: :delete %></td>
+      </tr>
+  <% end %>
+</table>

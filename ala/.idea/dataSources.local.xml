@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - ala@localhost" uuid="76f8ee2d-a24b-4d8a-80d2-eae0970539d4">
+      <secret-storage>master_key</secret-storage>
+      <user-name>joostrom</user-name>
+    </data-source>
+    <data-source name="Rails ala: development" uuid="07a29a79-40f5-4e76-bd8b-bf710f376b7e">
+      <auth-required>false</auth-required>
+    </data-source>
+    <data-source name="Rails ala: test" uuid="3032ce52-8243-4538-b513-40382fc1b2e6">
+      <auth-required>false</auth-required>
+    </data-source>
+  </component>
+</project>

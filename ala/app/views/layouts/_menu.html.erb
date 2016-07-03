@@ -1,0 +1,24 @@
+<%= image_tag('logo_no_text.svg', height: '100px', class: 'navbar_image') %>
+<ul>
+<%if current_user.nil? %>
+
+    <li><%= link_to 'log in', log_in_path %></li>
+    <li><%= link_to 'register', :root %></li>
+
+<% elsif !current_user.admin %>
+
+    <li><%= link_to 'subjects overzicht', overview_path %></li>
+    <li><%= link_to 'log out', log_out_path %></li>
+
+<% elsif current_user.admin %>
+
+
+      <li><%= link_to 'visitors', :visitors %></li>
+      <li><%= link_to 'questions', :questions %></li>
+      <li><%= link_to 'subjects', :subjects %></li>
+      <li><%= link_to 'log out', log_out_path %></li>
+
+
+<% end %>
+
+</ul>
